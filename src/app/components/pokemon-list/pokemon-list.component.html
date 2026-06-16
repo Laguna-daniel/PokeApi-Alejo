@@ -1,0 +1,39 @@
+<div class="container">
+  <h2>Pokédex SENA</h2>
+
+  <div *ngIf="isLoading" class="loading">
+    <p>Buscando Pokémon en la hierba alta, por favor espera...</p>
+  </div>
+
+  <div *ngIf="errorMessage" class="error">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <div *ngIf="!isLoading && !errorMessage" class="pokemon-grid">
+    
+    <div class="card" *ngFor="let pokemon of pokemons">
+      <img [src]="pokemon.image" [alt]="pokemon.name" class="card-image">
+      <div class="card-content">
+        <h3>{{ pokemon.name | uppercase }}</h3>
+        <p><strong>ID:</strong> N.º {{ pokemon.id }}</p>
+        <p><strong>Altura:</strong> {{ pokemon.height }}</p>
+        <p><strong>Peso:</strong> {{ pokemon.weight }}</p>
+        <p><strong>Exp. Base:</strong> {{ pokemon.baseExperience }}</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="pagination" *ngIf="!isLoading && !errorMessage">
+    <button class="btn" (click)="previousPage()" [disabled]="offset === 0">
+      Anterior
+    </button>
+    
+    <span class="page-indicator">Página {{ (offset / limit) + 1 }}</span>
+    
+    <button class="btn" (click)="nextPage()">
+      Siguiente
+    </button>
+  </div>
+
+</div>
