@@ -1,6 +1,4 @@
-// src/app/interfaces/pokemon.interface.ts
 
-// 1. Interfaces para el endpoint de la lista inicial
 export interface PokemonListResponse {
   count: number;
   next: string | null;
@@ -13,7 +11,7 @@ export interface PokemonListItem {
   url: string;
 }
 
-// 2. Interfaz para la respuesta cruda del detalle del Pokémon de la API
+
 export interface PokemonDetailResponse {
   id: number;
   name: string;
@@ -21,11 +19,11 @@ export interface PokemonDetailResponse {
   weight: number;
   base_experience: number;
   sprites: {
-    front_default: string; // Aquí viene la URL de la imagen
+    front_default: string; 
   };
 }
 
-// 3. Interfaz final mapeada (La que usaremos limpia en nuestro componente)
+
 export interface Pokemon {
   id: number;
   name: string;

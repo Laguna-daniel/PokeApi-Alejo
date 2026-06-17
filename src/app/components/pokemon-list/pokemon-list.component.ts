@@ -15,7 +15,7 @@ export class PokemonListComponent implements OnInit {
   isLoading: boolean = false;
   errorMessage: string = '';
 
-  // Variables para controlar la paginación
+  
   limit: number = 20;
   offset: number = 0;
 
@@ -29,7 +29,7 @@ export class PokemonListComponent implements OnInit {
     this.isLoading = true;
     this.errorMessage = '';
 
-    // Ahora le pasamos limit y offset al servicio
+    
     this.pokemonService.getPokemons(this.limit, this.offset).subscribe({
       next: (data: Pokemon[]) => {
         this.pokemons = data;
@@ -43,13 +43,13 @@ export class PokemonListComponent implements OnInit {
     });
   }
 
-  // Función para ir a la siguiente página
+  
   nextPage(): void {
     this.offset += this.limit; 
     this.cargarPokemons();     
   }
 
-  // Función para retroceder de página
+  
   previousPage(): void {
     if (this.offset >= this.limit) {
       this.offset -= this.limit; 
