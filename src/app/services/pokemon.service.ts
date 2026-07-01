@@ -8,7 +8,6 @@ import { PokemonListResponse, PokemonDetailResponse, Pokemon } from '../interfac
 })
 export class PokemonService {
   
-  // Endpoint de partida según la guía
   private apiUrl = 'https://pokeapi.co/api/v2/pokemon';
 
   constructor(private http: HttpClient) { }
