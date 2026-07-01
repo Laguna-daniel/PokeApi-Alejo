@@ -1,8 +1,8 @@
 <div class="container">
-  <h2>Pokédex SENA</h2>
+  <h2>Pokedex SENA</h2>
 
   <div *ngIf="isLoading" class="loading">
-    <p>Buscando Pokémon en la hierba alta, por favor espera...</p>
+    <p>Buscando Pokemon en la hierba alta, por favor espera...</p>
   </div>
 
   <div *ngIf="errorMessage" class="error">
@@ -29,7 +29,7 @@
       Anterior
     </button>
     
-    <span class="page-indicator">Página {{ (offset / limit) + 1 }}</span>
+    <span class="page-indicator">Pagina {{ (offset / limit) + 1 }}</span>
     
     <button class="btn" (click)="nextPage()">
       Siguiente
