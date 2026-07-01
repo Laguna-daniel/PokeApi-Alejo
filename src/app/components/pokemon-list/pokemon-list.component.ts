@@ -36,8 +36,8 @@ export class PokemonListComponent implements OnInit {
         this.isLoading = false;
       },
       error: (err) => {
-        console.error('Error al cargar Pokémon', err);
-        this.errorMessage = 'Ocurrió un error de conexión con la PokéAPI. Intenta de nuevo más tarde.';
+        console.error('Error al cargar Pokemon', err);
+        this.errorMessage = 'Ocurrio un error de conexion con la PokeAPI. Intenta de nuevo mas tarde.';
         this.isLoading = false;
       }
     });
